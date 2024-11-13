@@ -12,10 +12,10 @@ void setup() {
   Serial.begin(9600);
 }
 
-void loop() {
-  
+void onboard_blink(){
+
   unsigned long currentMillis = millis();
-  
+
   if(currentMillis - previousMillis >= INTERVAL) { 
     previousMillis = currentMillis; 
     digitalWrite(ONBOARD_LED, !digitalRead(ONBOARD_LED)); 
@@ -25,7 +25,12 @@ void loop() {
     Serial.println("OOO");
   else 
     Serial.println("XXX");
+}
 
+void loop() {
+  
+  
+  onboard_blink();
   
   if(Serial.available()){
    String input = Serial.readStringUntil('\n'); 
