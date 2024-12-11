@@ -1,0 +1,55 @@
+Entrada/saída
+
+4.1 Digital (sem delay com debounce)
+
+-> Somente texto sobre entrada (botão) e saída digital (LED1), manter um blink onboard
+
+O botão está conectado aos pinos 3.3V (3v3) e GPIO23 do ESP-WROOM-32, com um debounce de 10 milissegundos. Para gerenciar o estado do botão, são utilizadas três variáveis globais: lastButtonState (estado anterior), lastDebounceTime (tempo desde a última mudança estável) e buttonState (estado atual).
+
+A lógica de debounce é executada na função debounced_button(). Inicialmente, o estado do botão é lido com digitalRead(BUTTON). Caso uma mudança de estado seja detectada, o temporizador de debounce é reiniciado. Após o tempo configurado para debounce, se o estado permanecer estável e diferente do anterior, a variável buttonState é atualizada, e a função button() é chamada para tratar a ação correspondente.
+
+####################################################################################
+
+
+
+
+
+
+4.2 Analogica/PWM
+
+Detalhar conversor analógico/digital e digital/analógico, entrada analógica com potenciômetro e saída PWM no LED2.
+
+
+
+
+
+
+
+
+4.3 Serial
+
+Somente texto sobre entrada e saída serial pelo monitor serial (USB), imprimir todos os eventos das seções 4.1 e 4.2. Ler string no monitor serial e ligar o LED1 se uma condição for verdadeira, Ler número e ligar o LED2 com esse valor.
+
+
+
+
+
+
+4.4 Exemplo de entradas e saídas
+
+texto sobre o exemplo da seção 4. Enumerar os componentes utilizados.
+
+
+
+
+
+
+Código 2 - Exemplo da seção 4
+
+
+
+
+
+
+<foto do exemplo (preto e branco, visão superior>
+
